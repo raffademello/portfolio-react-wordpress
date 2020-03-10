@@ -1,0 +1,24 @@
+.picture{
+    width:150px;
+    height:150px;
+    @include border-radius(50%);
+    overflow: hidden;
+    background-size: cover;
+}
+
+.home-resume{
+    @include display-flex;
+    padding:10px;
+    .resume,.contact-info{
+        width:50%;
+    }
+    .contact-info{
+        padding-left:30px;
+        p{
+            @include display-flex;
+            .material-icons{
+                margin-right:15px;
+            }
+        }
+    }
+}

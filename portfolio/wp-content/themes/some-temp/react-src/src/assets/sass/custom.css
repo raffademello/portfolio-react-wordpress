@@ -1,0 +1,33 @@
+header {
+  padding: 10px; }
+
+.picture {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  background-size: cover; }
+
+.home-resume {
+  display: -webkit-flex;
+  display: flex;
+  padding: 10px; }
+  .home-resume .resume, .home-resume .contact-info {
+    width: 50%; }
+  .home-resume .contact-info {
+    padding-left: 30px; }
+    .home-resume .contact-info p {
+      display: -webkit-flex;
+      display: flex; }
+      .home-resume .contact-info p .material-icons {
+        margin-right: 15px; }
+
+footer {
+  padding: 10px;
+  background-color: #424242; }
+  footer p {
+    color: #FFF; }
