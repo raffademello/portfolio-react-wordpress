@@ -43,8 +43,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "/portfolio/wp-content/themes/portfolio-react",
-  "browserLaunchTo": "http://localhost/portfolio",
+  "homepage": "/portfolio-react/wp-content/themes/portfolio",
+  "browserLaunchTo": "http://localhost/portfolio-react",
   "devDependencies": {
     "compass-mixins": "^0.12.10"
   }

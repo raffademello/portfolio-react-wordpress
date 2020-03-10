@@ -137,7 +137,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/portfolio/wp-content/themes/portfolio-react/";
+/******/ 	__webpack_require__.p = "/portfolio-react/wp-content/themes/portfolio/";
 /******/
 /******/ 	var jsonpArray = this["webpackJsonpportfolio-react"] = this["webpackJsonpportfolio-react"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);

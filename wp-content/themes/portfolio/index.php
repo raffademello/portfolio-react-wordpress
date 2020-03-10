@@ -12,7 +12,7 @@
 <script> wpThemeClient.start("ws", "127.0.0.1", "8090"); </script>
 
 <meta charset="utf-8" />
-    <link rel="shortcut icon" href="/portfolio/wp-content/themes/portfolio-react/favicon.ico" />
+    <link rel="shortcut icon" href="/portfolio-react/wp-content/themes/portfolio/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -31,17 +31,17 @@
         If you're reading this from "view source" in your browser, it might not make sense as
         these tokens have already been evaluated and replaced, even in this remark blurb.
 
-        Notice the use of "php echo $TEMPLATE_PATH;" and /portfolio/wp-content/themes/portfolio-react in the tags above.
-        Both will be replaced with the URL of the `public` folder during the build (/portfolio/wp-content/themes/portfolio-react) or
+        Notice the use of "php echo $TEMPLATE_PATH;" and /portfolio-react/wp-content/themes/portfolio in the tags above.
+        Both will be replaced with the URL of the `public` folder during the build (/portfolio-react/wp-content/themes/portfolio) or
         at render time (php echo $TEMPLATE_PATH;)
         Only files inside the `public` folder can be referenced like this.
 
-        Unlike "/favicon.ico" or "favicon.ico", "/portfolio/wp-content/themes/portfolio-react/favicon.ico" will
+        Unlike "/favicon.ico" or "favicon.ico", "/portfolio-react/wp-content/themes/portfolio/favicon.ico" will
         work correctly both with client-side routing and a non-root public URL.
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>React WordPress Theme</title>
-<link href="/portfolio/wp-content/themes/portfolio-react/static/css/main.chunk.css?80d2efbc1764925d918b" rel="stylesheet"></head>
+<link href="/portfolio-react/wp-content/themes/portfolio/static/css/main.chunk.css?7c4fec0c6b06b4ad4b13" rel="stylesheet"></head>
     <body>
     <noscript>
         You need to enable JavaScript to run this app.
@@ -57,5 +57,5 @@
         To begin the development, run `npm run wpstart` or `yarn wpstart`.
         To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
     -->
-    <script src="/portfolio/wp-content/themes/portfolio-react/static/js/bundle.js?80d2efbc1764925d918b"></script><script src="/portfolio/wp-content/themes/portfolio-react/static/js/1.chunk.js?80d2efbc1764925d918b"></script><script src="/portfolio/wp-content/themes/portfolio-react/static/js/main.chunk.js?80d2efbc1764925d918b"></script></body>
+    <script src="/portfolio-react/wp-content/themes/portfolio/static/js/bundle.js?7c4fec0c6b06b4ad4b13"></script><script src="/portfolio-react/wp-content/themes/portfolio/static/js/0.chunk.js?7c4fec0c6b06b4ad4b13"></script><script src="/portfolio-react/wp-content/themes/portfolio/static/js/main.chunk.js?7c4fec0c6b06b4ad4b13"></script></body>
 </html>
