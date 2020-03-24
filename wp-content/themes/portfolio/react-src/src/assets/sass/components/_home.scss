@@ -1,3 +1,10 @@
+body,#root{
+    @include display-flex;
+    @include flex-direction(column);
+    height: 100vh;
+    max-height: 100vh;
+}
+
 .picture{
     width:150px;
     height:150px;

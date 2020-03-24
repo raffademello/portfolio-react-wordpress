@@ -2116,6 +2116,15 @@ code {
 header {
   padding: 10px; }
 
+.MuiFormControl-root {
+  width: 100%; }
+
+body, #root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh; }
+
 .picture {
   width: 150px;
   height: 150px;
@@ -2135,7 +2144,16 @@ header {
       .home-resume .contact-info p .material-icons {
         margin-right: 15px; }
 
+.display-projects {
+  display: grid;
+  margin-top: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem; }
+  .display-projects .MuiCardMedia-root {
+    background-size: contain; }
+
 footer {
+  margin-top: auto;
   padding: 10px;
   background-color: #424242; }
   footer p {

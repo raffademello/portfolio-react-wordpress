@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import profile_pic from "../assets/images/profile.jpg";
-import Icon from "@material-ui/core/Icon";
 
 export default class Home extends Component {
   render() {
@@ -25,21 +24,6 @@ export default class Home extends Component {
               as many you want.Duis sed odio sit amet nibh vulputate cursus a
               sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
               tincidunt auctor a ornare odio.
-            </p>
-          </div>
-          <div className="contact-info d-flex flex-column">
-            <h3>Contato</h3>
-            <p>
-              <Icon className="fa fa-user" /> Rafael de Melo
-            </p>
-            <p>
-              <Icon className="fa fa-envelope" /> rafaeldemelo@outlook.com
-            </p>
-            <p>
-              <Icon className="fa fa-phone" /> (13) 99185-1159
-            </p>
-            <p>
-              <Icon className="fab fa-linkedin-in" /> /raffademello
             </p>
           </div>
         </div>
