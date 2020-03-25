@@ -17,8 +17,8 @@ export default class Contato extends Component {
   render() {
     return (
       <>
-        <h2>Entre em contato</h2>
-        <Grid container spacing={2}>
+        <h1>Entre em contato</h1>
+        <Grid container spacing={2} className="justify-content-around">
           <Grid item xs={6}>
             <FormControl>
               <InputLabel htmlFor="my-input">{this.state.value}</InputLabel>
@@ -54,16 +54,16 @@ export default class Contato extends Component {
             <div className="contact-info d-flex flex-column">
               <h3>Contato</h3>
               <p>
-                <Icon className="fa fa-user" /> Rafael de Melo
+                <Icon className="fa fa-user fa-sm" /> Rafael de Melo
               </p>
               <p>
-                <Icon className="fa fa-envelope" /> rafaeldemelo@outlook.com
+                <Icon className="fa fa-envelope fa-sm" /> rafaeldemelo@outlook.com
               </p>
               <p>
-                <Icon className="fa fa-phone" /> (13) 99185-1159
+                <Icon className="fa fa-phone fa-sm" /> (13) 99185-1159
               </p>
               <p>
-                <Icon className="fab fa-linkedin-in" /> /raffademello
+                <Icon className="fab fa-linkedin-in fa-sm" /> /raffademello
               </p>
             </div>
           </Grid>
