@@ -1,3 +1,7 @@
+.MuiFormControl-root{
+    margin-bottom:10px;
+}
+
 .contact-info{
     @include display-flex;
     @include flex-direction(column);

@@ -433,17 +433,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "D:\\wamp3\\www\\portfolio-react\\wp-content\\themes\\portfolio\\react-src\\src\\templates\\Contato.jsx";
 
 
 
 class Contato extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  constructor(...args) {
-    super(...args);
-    this.state = {
-      value: "Nome"
+  constructor(props) {
+    super(props);
+
+    this.handleOnChange = event => {
+      const valor = event.target.value;
+      const nomeCampo = event.target.name;
+      this.setState({
+        [nomeCampo]: valor
+      });
     };
+
+    this.state = {
+      nome: "",
+      email: "",
+      assunto: "",
+      mensagem: ""
+    };
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    axios__WEBPACK_IMPORTED_MODULE_2___default()({
+      method: "POST",
+      url: "http://localhost/portfolio-react/wp-json",
+      data: this.state
+    }).then(response => {
+      if (response.data.status === "sucess") {
+        console.log("message sent");
+        this.resetForm();
+      } else if (response.data.status === "fail") {
+        console.log("message failed to send");
+      }
+    });
+  }
+
+  resetForm() {
+    this.setState({
+      nome: "",
+      email: "",
+      assunto: "",
+      mensagem: ""
+    });
   }
 
   render() {
@@ -451,18 +489,25 @@ class Contato extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 62,
         columnNumber: 9
       }
-    }, "Entre em contato"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
+    }, "Entre em contato"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 63,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
       container: true,
       spacing: 2,
       className: "justify-content-around",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
-        columnNumber: 9
+        lineNumber: 64,
+        columnNumber: 11
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
       item: true,
@@ -470,106 +515,115 @@ class Contato extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
-        columnNumber: 11
+        lineNumber: 65,
+        columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["FormControl"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
-        columnNumber: 13
+        lineNumber: 66,
+        columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["InputLabel"], {
       htmlFor: "my-input",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
-        columnNumber: 15
+        lineNumber: 67,
+        columnNumber: 17
       }
-    }, this.state.value), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Input"], {
-      id: "my-input",
+    }, "Nome"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+      id: "nome",
       "aria-describedby": "my-helper-text",
+      value: this.state.nome,
+      name: "nome",
+      onChange: this.handleOnChange,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
-        columnNumber: 15
+        lineNumber: 68,
+        columnNumber: 17
       }
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["FormControl"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
-        columnNumber: 13
+        lineNumber: 76,
+        columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["InputLabel"], {
       htmlFor: "my-input",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28,
-        columnNumber: 15
+        lineNumber: 77,
+        columnNumber: 17
       }
     }, "Email "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Input"], {
-      id: "my-input",
+      id: "email",
       "aria-describedby": "my-helper-text",
+      value: this.state.email,
+      name: "email",
+      onChange: this.handleOnChange,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29,
-        columnNumber: 15
+        lineNumber: 78,
+        columnNumber: 17
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["FormHelperText"], {
       id: "my-helper-text",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
-        columnNumber: 15
+        lineNumber: 85,
+        columnNumber: 17
       }
     }, "N\xF3s nunca divulgamos o seu email.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["FormControl"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34,
-        columnNumber: 13
+        lineNumber: 89,
+        columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["InputLabel"], {
       htmlFor: "my-input",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35,
-        columnNumber: 15
+        lineNumber: 90,
+        columnNumber: 17
       }
     }, "Assunto"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Input"], {
-      id: "my-input",
+      id: "assunto",
       "aria-describedby": "my-helper-text",
+      value: this.state.assunto,
+      name: "assunto",
+      onChange: this.handleOnChange,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36,
-        columnNumber: 15
+        lineNumber: 91,
+        columnNumber: 17
       }
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["FormControl"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
-        columnNumber: 13
+        lineNumber: 99,
+        columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
       className: "mt-3",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39,
-        columnNumber: 15
+        lineNumber: 100,
+        columnNumber: 17
       }
     }, "Mensagem"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TextField"], {
-      id: "outlined-full-width",
+      id: "mensagem",
       placeholder: "Digite aqui a sua mensagem",
       fullWidth: true,
       margin: "normal",
@@ -578,97 +632,134 @@ class Contato extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         shrink: true
       },
       variant: "outlined",
+      value: this.state.mensagem,
+      name: "mensagem",
+      onChange: this.handleOnChange,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
+        lineNumber: 101,
+        columnNumber: 17
+      }
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["FormControl"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 116,
         columnNumber: 15
       }
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "d-flex justify-content-end",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 117,
+        columnNumber: 17
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      variant: "contained",
+      className: "mr-3",
+      color: "primary",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 118,
+        columnNumber: 19
+      }
+    }, "Limpar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      variant: "contained",
+      color: "primary",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 121,
+        columnNumber: 19
+      }
+    }, "Enviar")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
       item: true,
       xs: 6,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53,
-        columnNumber: 11
+        lineNumber: 127,
+        columnNumber: 13
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "contact-info d-flex flex-column",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
-        columnNumber: 13
+        lineNumber: 128,
+        columnNumber: 15
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55,
-        columnNumber: 15
+        lineNumber: 129,
+        columnNumber: 17
       }
     }, "Contato"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56,
-        columnNumber: 15
+        lineNumber: 130,
+        columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
       className: "fa fa-user fa-sm",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57,
-        columnNumber: 17
+        lineNumber: 131,
+        columnNumber: 19
       }
     }), " Rafael de Melo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59,
-        columnNumber: 15
+        lineNumber: 133,
+        columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
       className: "fa fa-envelope fa-sm",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60,
-        columnNumber: 17
+        lineNumber: 134,
+        columnNumber: 19
       }
-    }), " rafaeldemelo@outlook.com"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    }), " ", "rafaeldemelo@outlook.com"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62,
-        columnNumber: 15
+        lineNumber: 137,
+        columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
       className: "fa fa-phone fa-sm",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63,
-        columnNumber: 17
+        lineNumber: 138,
+        columnNumber: 19
       }
     }), " (13) 99185-1159"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65,
-        columnNumber: 15
+        lineNumber: 140,
+        columnNumber: 17
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
       className: "fab fa-linkedin-in fa-sm",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
-        columnNumber: 17
+        lineNumber: 141,
+        columnNumber: 19
       }
-    }), " /raffademello")))));
+    }), " /raffademello"))))));
   }
 
 }
