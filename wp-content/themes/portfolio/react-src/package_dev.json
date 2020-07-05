@@ -48,8 +48,7 @@
   },
   "homepage": "/portfolio-react/wp-content/themes/portfolio",
   "browserLaunchTo": "http://localhost/portfolio-react",
-    "devDependencies": {
+  "devDependencies": {
     "compass-mixins": "^0.12.10"
   }
 }
-
