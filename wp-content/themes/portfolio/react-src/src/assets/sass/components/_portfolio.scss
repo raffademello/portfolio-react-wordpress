@@ -1,0 +1,11 @@
+.display-projects{
+    display: grid;
+    margin-top:40px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+
+    .MuiCardMedia-root{
+        background-size: contain;
+    }
+}
+
