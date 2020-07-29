@@ -1,0 +1,17 @@
+ssh root@138.197.221.57
+su - melo
+cd /
+sudo mysql
+USE u148200038_portfolio;
+update wp_options set option_value='http://rmsites.com.br' where option_name='home';
+vim (editor)
+como eu sei se estou no modo de comandos, aperto esc
+"i" para editar o arquivo
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+:x! (fechar salvando)
+:q! (fechar sem salvar, o exclamacao força)
+:w! (salva sem fechar)   
+https://meet.jit.si/static/close3.html
