@@ -1,1 +1,17 @@
 http://preview.themeforest.net/item/ultra-responsive-resume-cv-template/full_screen_preview/20384781?_ga=2.135532793.913963856.1583687833-1668288620.1583687304
+
+https://negomi.github.io/react-burger-menu/
+
+https://willianjusten.com.br/criando-um-menu-off-canvas-com-css3/
+
+https://www.digitalocean.com/community/tutorials/react-react-burger-menu-sidebar
+
+https://www.digitalocean.com/community/tutorials/how-to-use-font-awesome-5-with-react
+
+https://apppresser.com/using-wordpress-rest-api-mobile-app/
+
+https://github.com/FortAwesome/react-fontawesome/issues/64
+
+https://blog.bitsrc.io/how-to-build-a-contact-form-with-react-js-and-php-d5977c17fec0
+
+https://blog.mailtrap.io/react-contact-form/

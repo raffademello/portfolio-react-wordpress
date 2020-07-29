@@ -11,12 +11,15 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles(theme => ({
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
+
+const useStyles = (theme => ({
   title: {
-    flexGrow: 1
+    flexGrow: 1,
+    fontFamily:['Roboto Mono'],
+    fontWeight:'700'
+  },
+  AppBar:{
+    backgroundColor:'#26a69a'
   }
 }));
 
@@ -25,20 +28,13 @@ export default function Navbar() {
   return (
     <>
       <div className={classes.root}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
+        <AppBar position="static" style={classes.AppBar}>
+          <Toolbar className="d-flex justify-content-between">
+            <Typography variant="h6" style={classes.title}>
               Rafael de Melo
             </Typography>
             <ButtonGroup
+              class="desk-nav"
               color="inherit"
               aria-label="outlined primary button group"
             >
@@ -58,3 +54,5 @@ export default function Navbar() {
     </>
   );
 }
+
+

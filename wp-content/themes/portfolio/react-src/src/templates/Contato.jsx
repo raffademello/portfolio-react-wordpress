@@ -32,9 +32,11 @@ export default class Contato extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    //const templateUrl = '<?= get_bloginfo("template_url"); ?>';
+    //url:  templateUrl+'/classes/Email.php',
     axios({
       method: "POST",
-      url: "http://localhost/portfolio-react/wp-json",
+      url: "http://localhost/classes/Email.php",
       data: this.state
     }).then(response => {
       if (response.data.status === "sucess") {

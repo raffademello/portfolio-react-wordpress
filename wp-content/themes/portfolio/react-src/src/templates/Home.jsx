@@ -1,141 +1,126 @@
 import React, { Component } from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faTwitterSquare } from '@fortawesome/free-solid-svg-icons'
+import {
+  faTwitterSquare,
+  faLinkedin,
+  faFlickr,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 import Typography from "@material-ui/core/Typography";
 import profile_pic from "../assets/images/profile.jpg";
 import $ from "jquery";
 
 export default class Home extends Component {
-  componentDidMount(){
-		$('.skillbar').each(function(){
-			$(this).find('.skillbar-bar').animate({
-				width:$(this).attr('data-percent')
-			},500);
-		});
+  componentDidMount() {
+    $(".skillbar").each(function () {
+      $(this)
+        .find(".skillbar-bar")
+        .animate(
+          {
+            width: $(this).attr("data-percent"),
+          },
+          500
+        );
+    });
   }
+
   render() {
+    const skills = [
+      "HTML5",
+      "Bootstrap",
+      "CSS3",
+      "Sass",
+      "Jquery",
+      "React",
+      "Typescript",
+      "Angular",
+      "Gulp",
+      "Grunt",
+      "PHP",
+      "Wordpress",
+      "SEO",
+      "Photoshop",
+    ];
+
+    const listskills = skills.map((skill) => (
+      <div className="skillbar clearfix " data-percent="100%">
+        <div className="skillbar-title">
+          <span>{skill}</span>
+        </div>
+        <div className="skillbar-bar"></div>
+        <div className="skill-bar-percent"></div>
+      </div>
+    ));
     return (
       <div className="d-flex justify-content-center align-items-center my-4 flex-column">
         <div
           className="picture"
           style={{ backgroundImage: `url(${profile_pic})` }}
         ></div>
-        <h1>Rafael de Melo</h1>
-        <p>Fullstack com foco em frontend</p>
+        <div className="about-resume">
+          <h1>Rafael de Melo</h1>
+          <p>Fullstack com foco em frontend</p>
+          <div className="social">
+            <a href="https://twitter.com/raffademello" target="_blank">
+              <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
+            </a>
+            <a
+              className="mx-3"
+              href="https://twitter.com/raffademello"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
+            </a>
+            <a href="https://twitter.com/raffademello" target="_blank">
+              <FontAwesomeIcon icon={faFlickr} size="2x" />
+            </a>
+            <a
+              className="ml-3"
+              href="https://twitter.com/raffademello"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faGithub} size="2x" />
+            </a>
+          </div>
+        </div>
         <div className="home-resume">
           <div className="resume d-flex flex-column">
             <h3>Detalhes pessoais</h3>
             <p>
-              Hye, I’m Rafael residing in this beautiful world. I create
-              websites and mobile apps with great UX and UI design. I have done
-              work with big companies like Nokia, Google and Yahoo. Meet me or
-              Contact me for any queries. One Extra line for filling space. Fill
-              as many you want.Duis sed odio sit amet nibh vulputate cursus a
-              sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio
-              tincidunt auctor a ornare odio.
+              Olá, meu nome é Rafael de Melo, programador full stack com foco em
+              frontend, além de gostar muito de música internacional. Podemos
+              conversar sobre isso por horas que eu não enjoo. <br />
+              <br />
+              Passei por ótimas empresas como a Microsistec, Timepix e
+              Anajustra. Sou formado em Sistemas de Informação na Faculdade do
+              Litoral Paulista. <br />
+              <br />
+              Gosto de trabalhar em equipe, adoro designers talentosos, dá mais
+              vontade ainda de trabalhar em um layout bem trabalhado e com boa
+              usabilidade. <br />
+              <br />
+              Desenvolvi este projeto utilizando React e a API Rest do
+              Wordpress. Sempre gostei de Wordpress e fiquei curioso em
+              desenvolver uma aplicação React utilizando Wordpress como API.
+              Toda a parte de cadastro de informações foi feita através do
+              clássico painel de administração. Então eu pude focar mais nas
+              questões de design e frontend. <br />
+              <br />
+              <b>Porque me qualifico como fullstack ? </b>A área da web nos
+              proporciona infinitas possibilidades de aprendizado, com os anos
+              de experiência acredito que a maioria dos programadores frontend
+              já precisou lidar com interações front + back. Realizando ajustes
+              ajax ou axios para um método backend para cadastrar no banco de
+              dados. Além de realizar interações como inner join no banco de
+              dados para obter o resultado desejado.
             </p>
           </div>
           <div className="skills">
             <h3>Habilidades</h3>
-            <div className="d-flex">
-              <div className="flex-fill">
-                <div className="skillbar clearfix " data-percent="65%">
-                  <div className="skillbar-title" style={{background:'#d35400'}}>
-                    <span>HTML5</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background: '#e67e22'}}></div>
-                  <div className="skill-bar-percent">20%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="75%">
-                  <div className="skillbar-title" style={{background:'#5F3F8A'}}>
-                    <span>Bootstrap</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#5F3F8A'}}></div>
-                  <div className="skill-bar-percent">25%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="80%">
-                  <div className="skillbar-title" style={{background:'#2980b9'}}>
-                    <span>CSS3</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#3498db'}}></div>
-                  <div className="skill-bar-percent">25%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="70%">
-                  <div className="skillbar-title" style={{background:'#CF649A'}}>
-                    <span>Sass</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#cf649a'}}></div>
-                  <div className="skill-bar-percent">25%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="50%">
-                  <div className="skillbar-title" style={{background:'#2c3e50'}}>
-                    <span>jQuery</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#2c3e50'}}></div>
-                  <div className="skill-bar-percent">50%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="30%">
-                  <div className="skillbar-title" style={{background:'#007ACC'}}>
-                    <span>Typescript</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#007ACC'}}></div>
-                  <div className="skill-bar-percent">50%</div>
-                </div>
-              </div>
-
-              <div className="flex-fill pl-lg-3">
-                <div className="skillbar clearfix " data-percent="35%">
-                  <div className="skillbar-title" style={{background:'#c53031'}}>
-                    <span>Angular CLI</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#c53031'}}></div>
-                  <div className="skill-bar-percent">50%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="50%">
-                  <div className="skillbar-title" style={{background:'#EB4A4B'}}>
-                    <span>Gulp</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#EB4A4B'}}></div>
-                  <div className="skill-bar-percent">60%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="60%">
-                  <div className="skillbar-title" style={{background:'#46465e'}}>
-                    <span>PHP</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#5a68a5'}}></div>
-                  <div className="skill-bar-percent">40%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="70%">
-                  <div className="skillbar-title" style={{background:'#333333'}}>
-                    <span>Wordpress</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#525252'}}></div>
-                  <div className="skill-bar-percent">75%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="50%">
-                  <div className="skillbar-title" style={{background:'#27ae60'}}>
-                    <span>SEO</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#2ecc71'}}></div>
-                  <div className="skill-bar-percent">100%</div>
-                </div>
-
-                <div className="skillbar clearfix " data-percent="60%">
-                  <div className="skillbar-title" style={{background:'#124e8c'}}>
-                    <span>Photoshop</span>
-                  </div>
-                  <div className="skillbar-bar" style={{background:'#4288d0'}}></div>
-                  <div className="skill-bar-percent">70%</div>
-                </div>
-              </div>
+            <div className="skills-list">
+              {listskills}
             </div>
           </div>
         </div>

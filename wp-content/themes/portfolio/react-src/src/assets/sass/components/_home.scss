@@ -2,7 +2,41 @@ body,#root{
     @include display-flex;
     @include flex-direction(column);
     height: 100vh;
-    max-height: 100vh;
+	max-height: 100vh;
+	color:#333;
+	font:{
+		family:'Roboto Mono';
+		weight:400;
+	}
+}
+
+.desk-nav{
+	display:none;
+	@include media-breakpoint-up(md) {
+		@include display-flex;
+		margin-right:65px;
+	}
+}
+
+.odd-wrap{
+	padding:15px 0;
+	background-color: #EEE;
+}
+
+.about-resume{
+	text-align:center;
+	>h1{
+		margin:0 0 5px 0;
+		letter-spacing: -1px;
+	}
+
+	>p{
+		margin:0 0 25px 0;
+	}
+}
+
+.MuiTypography-h6{
+	text-transform:uppercase;
 }
 
 .picture{
@@ -10,24 +44,59 @@ body,#root{
     height:150px;
     @include border-radius(50%);
     overflow: hidden;
-    background-size: cover;
+	background-size: cover;
+	margin-bottom: 15px;;
+}
+
+.social{
+	@include display-flex;
+	@include justify-content(center);
+	a{
+		color: $main-color;
+	}
 }
 
 .home-resume{
-    @include display-flex;
+	@include display-flex;
+	@include flex-direction(column);
+	margin-top:30px;
+	p{
+		line-height: 23px;
+	}
+	/*@include media-breakpoint-up(md) {
+		@include flex-direction(row);
+	}*/
     padding:10px;
-    .resume,.skills{
-        width:50%;
-    }
+    /*.resume,.skills{
+		@include media-breakpoint-up(md) {
+			width:50%;
+		}
+	}*/
+
     .skills{
-        padding-left:30px;
+		/*@include media-breakpoint-up(md) {
+			padding-left:30px;
+		}*/
         p{
             @include display-flex;
             .material-icons{
                 margin-right:15px;
             }
-        }
+		}
+
+		.skills-list{
+			@include display-flex;
+			@include flex-direction(column);
+			@include media-breakpoint-up(md) {
+				@include flex-direction(row);
+				@include flex-wrap(wrap);
+			}
+		}
     }
+}
+
+footer{
+	margin-top:auto;
 }
 
 /* Skills */
@@ -37,6 +106,10 @@ body,#root{
 	display:block;
 	margin-bottom:15px;
 	width:100%;
+	@include media-breakpoint-up(md) {
+		width:46%;
+		margin-right:2%;
+	}
 	background:#eee;
 	height:35px;
 	border-radius:3px;
@@ -58,11 +131,11 @@ body,#root{
 	position:absolute;
 	top:0;
 	left:0;
-width:110px;
+	width:110px;
 	font-weight:bold;
 	font-size:13px;
 	color:#ffffff;
-	background:#6adcfa;
+	background:$secondary-color;
 	-webkit-border-top-left-radius:3px;
 	-webkit-border-bottom-left-radius:4px;
 	-moz-border-radius-topleft:3px;
@@ -88,7 +161,7 @@ width:110px;
 .skillbar-bar {
 	height:35px;
 	width:0px;
-	background:#6adcfa;
+	background:$main-color;
 	border-radius:3px;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
