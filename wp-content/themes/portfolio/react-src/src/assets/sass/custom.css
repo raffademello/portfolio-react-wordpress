@@ -238,7 +238,7 @@ footer {
       display: grid;
       margin-top: 40px;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      grid-gap: 1rem; } }
+      grid-gap: 2rem 1rem; } }
   .display-projects .MuiCardMedia-root {
     background-size: contain; }
 
