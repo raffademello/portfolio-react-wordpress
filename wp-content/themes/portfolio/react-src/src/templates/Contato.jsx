@@ -7,37 +7,43 @@ import {
   Icon,
   Grid,
   TextField,
-  Button
+  Button,
 } from "@material-ui/core";
 import axios from "axios";
 
-export default class Contato extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nome: "",
-      email: "",
-      assunto: "",
-      mensagem: ""
-    };
-  }
+const inicialState = {
+  nome: "",
+  email: "",
+  assunto: "",
+  mensagem: "",
+};
 
-  handleOnChange = event => {
+export default class Contato extends Component {
+  state = inicialState;
+  constructor() {
+    super();
+  }
+  
+  handleOnChange = (event) => {
     const valor = event.target.value;
     const nomeCampo = event.target.name;
     this.setState({
-      [nomeCampo]: valor
+      [nomeCampo]: valor,
     });
   };
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
-    //const templateUrl = '<?= get_bloginfo("template_url"); ?>';
-    //url:  templateUrl+'/classes/Email.php',
+    const data = {
+      nome: this.state.nome,
+      email: this.state.email,
+      assunto: this.state.assunto,
+      mensagem: this.state.mensagem,
+    }
     axios({
       method: "POST",
-      url: "http://localhost/classes/Email.php",
-      data: this.state
+      url: "/portfolio-react//wp-content/themes/portfolio/react-src/classes/Email.php",
+      data: data
     }).then(response => {
       if (response.data.status === "sucess") {
         console.log("message sent");
@@ -46,23 +52,19 @@ export default class Contato extends Component {
         console.log("message failed to send");
       }
     });
+    //const templateUrl = '<?= get_bloginfo("template_url"); ?>';
+    //url:  templateUrl+'/classes/Email.php',
   }
 
-  resetForm() {
-    this.setState({
-      nome: "",
-      email: "",
-      assunto: "",
-      mensagem: ""
-    });
-  }
-
+  handleCleanInput = () => {
+    this.setState(inicialState);
+  };
 
   render() {
     return (
       <>
         <h1>Entre em contato</h1>
-        <form>
+        <form autoComplete="false">
           <Grid container spacing={2} className="justify-content-around">
             <Grid item xs={12} md={6}>
               <FormControl>
@@ -84,9 +86,6 @@ export default class Contato extends Component {
                   name="email"
                   onChange={this.handleOnChange}
                 />
-                <FormHelperText id="my-helper-text">
-                  Nós nunca divulgamos o seu email.
-                </FormHelperText>
               </FormControl>
               <FormControl>
                 <InputLabel htmlFor="my-input">Assunto</InputLabel>
@@ -107,7 +106,7 @@ export default class Contato extends Component {
                   margin="normal"
                   size="larger"
                   InputLabelProps={{
-                    shrink: true
+                    shrink: true,
                   }}
                   variant="outlined"
                   value={this.state.mensagem}
@@ -117,10 +116,14 @@ export default class Contato extends Component {
               </FormControl>
               <FormControl>
                 <div className="d-flex justify-content-end">
-                  <Button variant="contained" className="mr-3" color="primary">
+                  <Button variant="contained" className="mr-3" color="primary" onClick={this.handleCleanInput}>
                     Limpar
                   </Button>
-                  <Button variant="contained" color="primary">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={this.handleSubmit}
+                  >
                     Enviar
                   </Button>
                 </div>

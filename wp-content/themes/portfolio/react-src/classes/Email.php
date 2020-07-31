@@ -8,13 +8,13 @@ $mail = new PHPMailer;
 
 $mail->isSMTP();                        // Setar o uso do SMTP
 
-$mail->Host = 'mx1.hostinger.com.br'; 	// Servidor smtp 
+$mail->Host = 'smtp.gmail.com'; 	// Servidor smtp 
 
 $mail->SMTPAuth = true;                 // Habilita a autenticação do form
 
-$mail->Username = 'noreply@rafaeldemelo.com.br';    // Conta de e-mail que realizará o envio
+$mail->Username = 'raffa.demello@gmail.com';    // Conta de e-mail que realizará o envio
 
-$mail->Password = 'Bas1nXXwLklg';       // Senha da conta de e-mail
+$mail->Password = 'pirila[1985]';       // Senha da conta de e-mail
 
 //$mail->SMTPSecure = 'tls';            // Habilitar uso do TLS (plesk 11.5 ou utilizando contas do Gmail)
 
