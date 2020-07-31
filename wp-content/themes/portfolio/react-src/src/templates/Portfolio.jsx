@@ -41,14 +41,14 @@ const useStyles = makeStyles(theme => ({
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3)
-  }
+  },
 }));
 
 const Portfolio = () => {
   const [portfolios, setPortfolios] = useState([]); /* get projects */
   const [open, setOpen] = useState(false); /* open Modal */
   const [loading, setLoading] = useState(true);
-
+///?rest_route=/wp/v2/posts&_embed
   useEffect(() => {
     axios
       .get(`http://localhost/portfolio-react/wp-json/wp/v2/posts?_embed`)

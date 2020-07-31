@@ -229,10 +229,16 @@ footer {
 
 /**/
 .display-projects {
-  display: grid;
-  margin-top: 40px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 1rem; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
+  @media (min-width: 768px) {
+    .display-projects {
+      display: grid;
+      margin-top: 40px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 1rem; } }
   .display-projects .MuiCardMedia-root {
     background-size: contain; }
 
@@ -245,8 +251,10 @@ footer {
   -webkit-flex-direction: column;
   flex-direction: column;
   -webkit-justify-content: center;
-  justify-content: center;
-  padding-left: 80px; }
+  justify-content: center; }
+  @media (min-width: 768px) {
+    .contact-info {
+      padding-left: 80px; } }
 
 footer {
   margin-top: auto;

@@ -64,7 +64,7 @@ export default class Contato extends Component {
         <h1>Entre em contato</h1>
         <form>
           <Grid container spacing={2} className="justify-content-around">
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <FormControl>
                 <InputLabel htmlFor="my-input">Nome</InputLabel>
                 <Input
@@ -126,7 +126,7 @@ export default class Contato extends Component {
                 </div>
               </FormControl>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <div className="contact-info d-flex flex-column">
                 <h3>Contato</h3>
                 <p>
