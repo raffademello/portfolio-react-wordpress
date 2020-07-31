@@ -251,8 +251,10 @@ footer {
   -webkit-flex-direction: column;
   flex-direction: column;
   -webkit-justify-content: center;
-  justify-content: center;
-  padding-left: 80px; }
+  justify-content: center; }
+  @media (min-width: 768px) {
+    .contact-info {
+      padding-left: 80px; } }
 
 footer {
   margin-top: auto;
