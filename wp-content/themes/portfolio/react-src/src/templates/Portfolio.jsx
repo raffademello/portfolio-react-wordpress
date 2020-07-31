@@ -54,7 +54,7 @@ const Portfolio = () => {
   ///?rest_route=/wp/v2/posts&_embed
   useEffect(() => {
     axios
-      .get(`http://localhost/portfolio-react/wp-json/wp/v2/posts?_embed`)
+      .get(`/?rest_route=/wp/v2/posts&_embed`)
       .then((res) => {
         setPortfolios(res.data);
         setLoading(false);
