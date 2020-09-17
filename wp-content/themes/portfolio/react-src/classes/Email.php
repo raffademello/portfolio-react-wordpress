@@ -4,28 +4,28 @@ require 'PHPMailerAutoload.php';
 $mail = new PHPMailer;
 
 
-//$mail->SMTPDebug = 3;                 // Habilita modo debug na saída
+$mail->SMTPDebug = 3;                 // Habilita modo debug na saída
 
 $mail->isSMTP();                        // Setar o uso do SMTP
 
 $mail->Host = 'smtp.gmail.com'; 	// Servidor smtp 
 
-$mail->SMTPAuth = true;                 // Habilita a autenticação do form
+//$mail->SMTPAuth = true;                 // Habilita a autenticação do form
 
 $mail->Username = 'raffa.demello@gmail.com';    // Conta de e-mail que realizará o envio
 
 $mail->Password = 'pirila[1985]';       // Senha da conta de e-mail
 
-//$mail->SMTPSecure = 'tls';            // Habilitar uso do TLS (plesk 11.5 ou utilizando contas do Gmail)
+$mail->SMTPSecure = 'tls';            // Habilitar uso do TLS (plesk 11.5 ou utilizando contas do Gmail)
 
 $mail->Port = 587;                       // Porta de conexão 
 
-$mail->From = 'noreply@rafaeldemelo.com.br'; 			// e-mail From deve ser o mesmo de "username" (contadeEmail)
+$mail->From = 'raffa.demello@gmail.com'; 			// e-mail From deve ser o mesmo de "username" (contadeEmail)
 
 $mail->FromName = strip_tags(utf8_decode('Rafael de Melo'));	// Nome que será exibido ao receber a mensagem. 
 
 //$mail->addAddress('contato@rafaeldemelo.com.br', 'noreply'); // Destinatário 
-$mail->addAddress('rafael.demelo@outlook.com', 'noreply'); // Destinatário 
+$mail->addAddress('raffa.demello@gmail.com', 'noreply'); // Destinatário 
 
 //$mail->addAddress('contato@erikalyma.hospedagemdesites.ws');               	// Nome do destinatário
 
