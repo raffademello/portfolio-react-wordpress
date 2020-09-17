@@ -42,10 +42,11 @@ export default class Contato extends Component {
     }
     axios({
       method: "POST",
-      url: "/portfolio-react//wp-content/themes/portfolio/react-src/classes/Email.php",
+      url: "/portfolio-react/wp-content/themes/portfolio/react-src/classes/Email.php",
       data: data
     }).then(response => {
-      if (response.data.status === "sucess") {
+      console.log(response);
+      if (response.data.status === "success") {
         console.log("message sent");
         this.resetForm();
       } else if (response.data.status === "fail") {
