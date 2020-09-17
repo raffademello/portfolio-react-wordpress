@@ -46,10 +46,11 @@ export default class Contato extends Component {
       data: data
     }).then(response => {
       console.log(response);
-      if (response.data.status === "success") {
+      if (response.data.status === 200) {
         console.log("message sent");
         this.resetForm();
-      } else if (response.data.status === "fail") {
+      } else {
+        console.log(response.data.status);
         console.log("message failed to send");
       }
     });
