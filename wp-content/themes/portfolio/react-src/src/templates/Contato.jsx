@@ -42,7 +42,7 @@ export default class Contato extends Component {
     }
     axios({
       method: "POST",
-      url: "/wp-content/themes/portfolio/react-src/classes/Email.php",
+      url: "/wp-content/themes/portfolio/react-src/classes/src/gmail.php",
       data: data
     }).then(response => {
       console.log(response);
