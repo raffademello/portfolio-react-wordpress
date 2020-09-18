@@ -7,17 +7,17 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-if(isset($_POST['nome']) && !empty($_POST['nome'])){
-    $nome = strip_tags(utf8_decode($_POST['nome']));
+if(isset($_GET['nome']) && !empty($_GET['nome'])){
+    $nome = strip_tags(utf8_decode($_GET['nome']));
 }
-if(isset($_POST['email']) && !empty($_POST['email'])){
+if(isset($_GET['email']) && !empty($_GET['email'])){
     $email = strip_tags(utf8_decode($_POST['email']));
 }
-if(isset($_POST['telefone']) && !empty($_POST['telefone'])){
-    $telefone = strip_tags(utf8_decode($_POST['telefone']));
+if(isset($_GET['telefone']) && !empty($_GET['telefone'])){
+    $telefone = strip_tags(utf8_decode($_GET['telefone']));
 }
-if(isset($_POST['mensagem']) && !empty($_POST['mensagem'])){
-    $mensagem = strip_tags(utf8_decode($_POST['mensagem']));
+if(isset($_GET['mensagem']) && !empty($_GET['mensagem'])){
+    $mensagem = strip_tags(utf8_decode($_GET['mensagem']));
 }
 
 $mail = new PHPMailer(true);
