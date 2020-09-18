@@ -7,6 +7,19 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+if(isset($_POST['nome']) && !empty($_POST['nome'])){
+    $nome = strip_tags(utf8_decode($_POST['nome']));
+}
+if(isset($_POST['email']) && !empty($_POST['email'])){
+    $email = strip_tags(utf8_decode($_POST['email']));
+}
+if(isset($_POST['telefone']) && !empty($_POST['telefone'])){
+    $telefone = strip_tags(utf8_decode($_POST['telefone']));
+}
+if(isset($_POST['mensagem']) && !empty($_POST['mensagem'])){
+    $mensagem = strip_tags(utf8_decode($_POST['mensagem']));
+}
+
 $mail = new PHPMailer(true);
 
 try {
@@ -26,10 +39,10 @@ try {
     $mail->Body = '<html><body>'; 
     //$mail->Body .= '<h1>Pedido solicitado via website</h1>'; 
     $mail->Body .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-    $mail->Body .= "<tr style='background: #eee;'><td><strong>Nome:</strong> </td><td>" . strip_tags(utf8_decode($_POST['nome'])) . "</td></tr>";
-    $mail->Body .= "<tr style='background: #eee;'><td><strong>E-mail:</strong> </td><td>" . strip_tags(utf8_decode($_POST['email'])) . "</td></tr>";
-    $mail->Body .= "<tr style='background: #eee;'><td><strong>Telefone:</strong> </td><td>" . strip_tags(utf8_decode($_POST['telefone'])) . "</td></tr>";
-    $mail->Body .= "<tr style='background: #eee;'><td><strong>Mensagem:</strong> </td><td>" . strip_tags(utf8_decode($_POST['mensagem'])) . "</td></tr>";
+    $mail->Body .= "<tr style='background: #eee;'><td><strong>Nome:</strong> </td><td>" . $nome . "</td></tr>";
+    $mail->Body .= "<tr style='background: #eee;'><td><strong>E-mail:</strong> </td><td>" . $email . "</td></tr>";
+    $mail->Body .= "<tr style='background: #eee;'><td><strong>Telefone:</strong> </td><td>" . $telefone . "</td></tr>";
+    $mail->Body .= "<tr style='background: #eee;'><td><strong>Mensagem:</strong> </td><td>" . $mensagem . "</td></tr>";
     $mail->Body .= "</td></tr>";
     $mail->Body .= "</table>";
     $mail->Body .= '</body></html>'; 
