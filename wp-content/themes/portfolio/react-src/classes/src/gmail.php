@@ -26,12 +26,7 @@ try {
     $mail->Body = '<html><body>'; 
     //$mail->Body .= '<h1>Pedido solicitado via website</h1>'; 
     $mail->Body .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-    if(isset($_POST['nome'])){
-        $mail->Body .= "<tr style='background: #eee;'><td><strong>Nome:</strong> </td><td>" . strip_tags(utf8_decode($_POST['nome'])) . "</td></tr>";
-    }else{
-        $mail->Body .= "<tr style='background: #eee;'><td><strong>Nome:</strong> </td><td>Nome vazio</td></tr>";
-    }
-
+    $mail->Body .= "<tr style='background: #eee;'><td><strong>Nome:</strong> </td><td>" . strip_tags(utf8_decode($_POST['nome'])) . "</td></tr>";
     $mail->Body .= "<tr style='background: #eee;'><td><strong>E-mail:</strong> </td><td>" . strip_tags(utf8_decode($_POST['email'])) . "</td></tr>";
     $mail->Body .= "<tr style='background: #eee;'><td><strong>Telefone:</strong> </td><td>" . strip_tags(utf8_decode($_POST['telefone'])) . "</td></tr>";
     $mail->Body .= "<tr style='background: #eee;'><td><strong>Mensagem:</strong> </td><td>" . strip_tags(utf8_decode($_POST['mensagem'])) . "</td></tr>";
