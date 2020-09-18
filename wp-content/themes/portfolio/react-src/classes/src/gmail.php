@@ -5,15 +5,20 @@
  * example to see how to use XOAUTH2.
  * The IMAP section shows how to save this message to the 'Sent Mail' folder using IMAP commands.
  */
+require_once('src/PHPMailer.php');
+require_once('src/SMTP.php');
+require_once('src/Exception.php');
 
 //Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\SMTP; 
+use PHPMailer\PHPMailer\Exception; 
 
-require '../vendor/autoload.php';
+//require '../vendor/autoload.php';
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
+
 
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
@@ -49,10 +54,10 @@ $mail->Password = 'pirila[1985]';
 $mail->setFrom('raffa.demello@gmail.com', 'First Last');
 
 //Set an alternative reply-to address
-$mail->addReplyTo('replyto@example.com', 'First Last');
+//$mail->addReplyTo('replyto@example.com', 'First Last');
 
 //Set who the message is to be sent to
-$mail->addAddress('whoto@example.com', 'John Doe');
+$mail->addAddress('raffa.demello@gmail.com', 'John Doe');
 
 //Set the subject line
 $mail->Subject = 'PHPMailer GMail SMTP test';
@@ -66,6 +71,20 @@ $mail->AltBody = 'This is a plain-text message body';
 
 //Attach an image file
 $mail->addAttachment('images/phpmailer_mini.png');
+
+$mail->isHTML(true);   // Set email format to HTML
+$mail->Subject = utf8_decode('Contato - website');  //Assunto da Mensagem
+
+$mail->Body = '<html><body>'; 
+//$mail->Body .= '<h1>Pedido solicitado via website</h1>'; 
+$mail->Body .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+$mail->Body .= "<tr style='background: #eee;'><td><strong>Nome:</strong> </td><td>" . strip_tags(utf8_decode($_POST['nome'])) . "</td></tr>";
+$mail->Body .= "<tr style='background: #eee;'><td><strong>E-mail:</strong> </td><td>" . strip_tags(utf8_decode($_POST['email'])) . "</td></tr>";
+$mail->Body .= "<tr style='background: #eee;'><td><strong>Telefone:</strong> </td><td>" . strip_tags(utf8_decode($_POST['telefone'])) . "</td></tr>";
+$mail->Body .= "<tr style='background: #eee;'><td><strong>Mensagem:</strong> </td><td>" . strip_tags(utf8_decode($_POST['mensagem'])) . "</td></tr>";
+$mail->Body .= "</td></tr>";
+$mail->Body .= "</table>";
+$mail->Body .= '</body></html>'; 
 
 //send the message, check for errors
 if (!$mail->send()) {
