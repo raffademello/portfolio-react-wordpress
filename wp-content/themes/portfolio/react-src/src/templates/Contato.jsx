@@ -41,18 +41,10 @@ export default class Contato extends Component {
       mensagem: this.state.mensagem,
     }
     axios({
-      method: "POST",
-      url: "/wp-content/themes/portfolio/react-src/classes/src/gmail.php",
-      data: data
+      method: "GET",
+      url: `/wp-content/themes/portfolio/react-src/classes/src/gmail.php?nome=${data.nome}&email=${data.email}&assunto=${data.assunto}&mensagem=${data.mensagem}`,
     }).then(response => {
       console.log(response);
-      if (response.data.status === 200) {
-        console.log("message sent");
-        this.resetForm();
-      } else {
-        console.log(response.data.status);
-        console.log("message failed to send");
-      }
     });
     //const templateUrl = '<?= get_bloginfo("template_url"); ?>';
     //url:  templateUrl+'/classes/Email.php',
