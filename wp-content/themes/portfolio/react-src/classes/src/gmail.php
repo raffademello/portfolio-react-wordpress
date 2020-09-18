@@ -12,7 +12,7 @@ if(isset($_GET['nome']) && !empty($_GET['nome'])){
 }
 
 if(isset($_GET['email']) && !empty($_GET['email'])){
-    $email = strip_tags(utf8_decode($_POST['email']));
+    $email = strip_tags(utf8_decode($_GET['email']));
 }
 
 if(isset($_GET['assunto']) && !empty($_GET['assunto'])){
