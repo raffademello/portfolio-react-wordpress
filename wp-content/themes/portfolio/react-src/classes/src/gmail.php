@@ -10,12 +10,15 @@ use PHPMailer\PHPMailer\Exception;
 if(isset($_GET['nome']) && !empty($_GET['nome'])){
     $nome = strip_tags(utf8_decode($_GET['nome']));
 }
+
 if(isset($_GET['email']) && !empty($_GET['email'])){
     $email = strip_tags(utf8_decode($_POST['email']));
 }
-if(isset($_GET['telefone']) && !empty($_GET['telefone'])){
-    $telefone = strip_tags(utf8_decode($_GET['telefone']));
+
+if(isset($_GET['assunto']) && !empty($_GET['assunto'])){
+    $assunto = strip_tags(utf8_decode($_GET['assunto']));
 }
+
 if(isset($_GET['mensagem']) && !empty($_GET['mensagem'])){
     $mensagem = strip_tags(utf8_decode($_GET['mensagem']));
 }
@@ -37,11 +40,10 @@ try {
 	$mail->isHTML(true);
     $mail->Subject = utf8_decode('Contato - website');  //Assunto da Mensagem
     $mail->Body = '<html><body>'; 
-    //$mail->Body .= '<h1>Pedido solicitado via website</h1>'; 
     $mail->Body .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
     $mail->Body .= "<tr style='background: #eee;'><td><strong>Nome:</strong> </td><td>" . $nome . "</td></tr>";
     $mail->Body .= "<tr style='background: #eee;'><td><strong>E-mail:</strong> </td><td>" . $email . "</td></tr>";
-    $mail->Body .= "<tr style='background: #eee;'><td><strong>Telefone:</strong> </td><td>" . $telefone . "</td></tr>";
+    $mail->Body .= "<tr style='background: #eee;'><td><strong>Assunto:</strong> </td><td>" . $assunto . "</td></tr>";
     $mail->Body .= "<tr style='background: #eee;'><td><strong>Mensagem:</strong> </td><td>" . $mensagem . "</td></tr>";
     $mail->Body .= "</td></tr>";
     $mail->Body .= "</table>";
