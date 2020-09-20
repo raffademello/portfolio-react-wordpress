@@ -245,10 +245,6 @@ footer {
 .MuiFormControl-root {
   margin-bottom: 10px; }
 
-.grid-error .MuiGrid-item {
-  color: red;
-  font-size: 12px; }
-
 .contact-info {
   display: -webkit-flex;
   display: flex;
@@ -259,11 +255,6 @@ footer {
   @media (min-width: 768px) {
     .contact-info {
       padding-left: 80px; } }
-  .contact-info p {
-    display: -webkit-flex;
-    display: flex; }
-    .contact-info p svg {
-      margin-right: 10px; }
 
 footer {
   margin-top: auto;

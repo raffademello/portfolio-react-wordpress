@@ -9,6 +9,7 @@ import {
   TextField,
   Button,
 } from "@material-ui/core";
+
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
@@ -19,14 +20,12 @@ const inicialState = {
   email: "",
   assunto: "",
   mensagem: "",
-  errors: [],
 };
 
 export default class Contato extends Component {
   state = inicialState;
   constructor() {
     super();
-    this.validator = new formValidation();
   }
   
   handleOnChange = (event) => {
@@ -38,22 +37,21 @@ export default class Contato extends Component {
   };
 
   handleSubmit = event => {
-    try{
-      event.preventDefault();
-      const data = {
-        nome: this.state.nome,
-        email: this.state.email,
-        assunto: this.state.assunto,
-        mensagem: this.state.mensagem,
-      }
-      this.validator.validate(data);
-      this.handleCleanInput();
-    }catch (error) {
-      const errors = error.errors;
-      this.setState({
-        errors: errors
-      });
+    event.preventDefault();
+    const data = {
+      nome: this.state.nome,
+      email: this.state.email,
+      assunto: this.state.assunto,
+      mensagem: this.state.mensagem,
     }
+    axios({
+      method: "GET",
+      url: `/wp-content/themes/portfolio/react-src/classes/src/gmail.php?nome=${data.nome}&email=${data.email}&assunto=${data.assunto}&mensagem=${data.mensagem}`,
+    }).then(response => {
+      console.log(response);
+    });
+    //const templateUrl = '<?= get_bloginfo("template_url"); ?>';
+    //url:  templateUrl+'/classes/Email.php',
   }
 
   handleCleanInput = () => {
@@ -63,68 +61,59 @@ export default class Contato extends Component {
   render() {
     return (
       <>
-        <h1 className="mb-2">Entre em contato</h1>
-        <small>Dúvidas, orçamentos e parcerias, estou a disposição =)</small>
-        {this.state.errors && this.state.errors.length > 0 && (
-          <Grid container spacing={1} className="mt-4 grid-error">
-            {this.state.errors.map(msg => {
-                return (
-                  <Grid item xs={12} spacing={1}>
-                    {msg}
-                  </Grid>
-                );
-              })}
-          </Grid>
-        )}
-        <form autoComplete="false" className="my-4">
+        <h1>Entre em contato</h1>
+        <form autoComplete="false">
           <Grid container spacing={2} className="justify-content-around">
             <Grid item xs={12} md={6}>
               <FormControl>
-                <TextField
+                <InputLabel htmlFor="my-input">Nome</InputLabel>
+                <Input
                   id="nome"
-                  label="Nome" variant="outlined"
-                  aria-describedby="Name Field"
+                  aria-describedby="my-helper-text"
                   value={this.state.nome}
                   name="nome"
                   onChange={this.handleOnChange}
                 />
               </FormControl>
               <FormControl>
-                <TextField
+                <InputLabel htmlFor="my-input">Email </InputLabel>
+                <Input
                   id="email"
-                  label="E-mail" variant="outlined"
-                  aria-describedby="Email field"
-                  className="my-3"
+                  aria-describedby="my-helper-text"
                   value={this.state.email}
                   name="email"
                   onChange={this.handleOnChange}
                 />
               </FormControl>
               <FormControl>
-                <TextField
+                <InputLabel htmlFor="my-input">Assunto</InputLabel>
+                <Input
                   id="assunto"
-                  label="Assunto" variant="outlined"
-                  aria-describedby="Assunto Field"
+                  aria-describedby="my-helper-text"
                   value={this.state.assunto}
                   name="assunto"
                   onChange={this.handleOnChange}
                 />
               </FormControl>
               <FormControl>
+                <label className="mt-3">Mensagem</label>
                 <TextField
                   id="mensagem"
                   placeholder="Digite aqui a sua mensagem"
-                  label="Mensagem" variant="outlined"
-                  multiline
+                  fullWidth
                   margin="normal"
                   size="larger"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
                   value={this.state.mensagem}
                   name="mensagem"
                   onChange={this.handleOnChange}
                 />
               </FormControl>
               <FormControl>
-                <div className="d-flex justify-content-end mt-2">
+                <div className="d-flex justify-content-end">
                   <Button variant="contained" className="mr-3" color="primary" onClick={this.handleCleanInput}>
                     Limpar
                   </Button>
@@ -149,8 +138,8 @@ export default class Contato extends Component {
                 </p>
                 <p>
                   <PhoneIcon className=""/> (13) 99185-1159
-                </p>
 
+                </p>
               </div>
             </Grid>
           </Grid>
