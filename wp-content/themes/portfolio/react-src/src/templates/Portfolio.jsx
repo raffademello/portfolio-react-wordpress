@@ -103,8 +103,9 @@ const Portfolio = () => {
                 <Button
                   size="small"
                   color="primary"
-                  onClick={() => handleOpen(row.slug,row.content.rendered)}
+                  onClick={() => handleOpen(row.slug, row.content.rendered)}
                 >
+                  Detalhes 
                 </Button>
               </CardActions>
             </Card>
