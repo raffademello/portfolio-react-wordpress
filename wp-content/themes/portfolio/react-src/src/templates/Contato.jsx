@@ -145,7 +145,7 @@ export default class Contato extends Component {
                 </p>
                 <p>
                   <EmailIcon/>
-                  rafaeldemelo@outlook.com
+                  rafaeldemelo@outlook.com 
                 </p>
                 <p>
                   <PhoneIcon/> (13) 99185-1159
