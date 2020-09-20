@@ -105,7 +105,7 @@ const Portfolio = () => {
                   color="primary"
                   onClick={() => handleOpen(row.slug, row.content.rendered)}
                 >
-                  Detalhes 
+                  Detalhes
                 </Button>
               </CardActions>
             </Card>
