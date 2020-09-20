@@ -63,22 +63,19 @@ export default class Home extends Component {
           <h1>Rafael de Melo</h1>
           <p>Fullstack com foco em frontend</p>
           <div className="social">
-            <a href="https://twitter.com/raffademello" target="_blank">
-              <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
-            </a>
             <a
               className="mx-3"
-              href="https://twitter.com/raffademello"
+              href="https://www.linkedin.com/in/raffademello/"
               target="_blank"
             >
               <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
-            <a href="https://twitter.com/raffademello" target="_blank">
+            <a href="https://www.flickr.com/photos/raffademello/" target="_blank">
               <FontAwesomeIcon icon={faFlickr} size="2x" />
             </a>
             <a
               className="ml-3"
-              href="https://twitter.com/raffademello"
+              href="//#endregion"
               target="_blank"
             >
               <FontAwesomeIcon icon={faGithub} size="2x" />
