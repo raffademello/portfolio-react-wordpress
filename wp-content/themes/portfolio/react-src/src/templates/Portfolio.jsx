@@ -48,13 +48,13 @@ const useStyles = makeStyles((theme) => ({
 const Portfolio = () => {
   const [portfolios, setPortfolios] = useState([]); /* get projects */
   const [open, setOpen] = useState(false); /* open Modal */
-  const [titleProject,settitleProject] = useState("")
-  const [detailsProject,setdetailsProject] = useState("")
+  const [titleProject, settitleProject] = useState("");
+  const [detailsProject, setdetailsProject] = useState("");
   const [loading, setLoading] = useState(true);
   ///?rest_route=/wp/v2/posts&_embed
   useEffect(() => {
     axios
-      .get(`/?rest_route=/wp/v2/posts&_embed`)
+      .get(`http://localhost/portfolio-react/?rest_route=/wp/v2/posts&_embed`)
       .then((res) => {
         setPortfolios(res.data);
         setLoading(false);
@@ -99,16 +99,13 @@ const Portfolio = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions>
+              <CardActions className="d-flex justify-content-center">
                 <Button
                   size="small"
                   color="primary"
-                  onClick={() => handleOpen(row.slug,row.content.rendered)}
+                  onClick={() => handleOpen(row.slug, row.content.rendered)}
                 >
                   Detalhes
-                </Button>
-                <Button size="small" color="primary">
-                  Ver projeto
                 </Button>
               </CardActions>
             </Card>
