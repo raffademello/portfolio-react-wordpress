@@ -9,7 +9,11 @@ import {
   TextField,
   Button,
 } from "@material-ui/core";
-import axios from "axios";
+
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
+import formValidation from "../services/formValidation"
 
 const inicialState = {
   nome: "",
@@ -126,18 +130,15 @@ export default class Contato extends Component {
             <Grid item xs={12} md={6}>
               <div className="contact-info d-flex flex-column">
                 <h3>Contato</h3>
-                <p>
-                  <Icon className="fa fa-user fa-sm" /> Rafael de Melo
+                <p><AccountCircleIcon className=""/> Rafael de Melo
                 </p>
                 <p>
-                  <Icon className="fa fa-envelope fa-sm" />{" "}
-                  rafaeldemelo@outlook.com
+                  <EmailIcon className=""/>
+                  rafaeldemelo@outlook.com 
                 </p>
                 <p>
-                  <Icon className="fa fa-phone fa-sm" /> (13) 99185-1159
-                </p>
-                <p>
-                  <Icon className="fab fa-linkedin-in fa-sm" /> /raffademello
+                  <PhoneIcon className=""/> (13) 99185-1159
+
                 </p>
               </div>
             </Grid>
