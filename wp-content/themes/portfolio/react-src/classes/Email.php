@@ -12,7 +12,7 @@ $mail->Host = 'rmsites.com.br'; 	// Servidor smtp
 
 //$mail->SMTPAuth = true;                // Habilita a autenticação do form
 
-$mail->Username = 'contato@rmsites.com.br';    // Conta de e-mail que realizará o envio
+$mail->Username = 'melo@rmsites.com.br';    // Conta de e-mail que realizará o envio
 
 $mail->Password = 'pearlj[90]';       // Senha da conta de e-mail
 
@@ -20,7 +20,7 @@ $mail->Password = 'pearlj[90]';       // Senha da conta de e-mail
 
 $mail->Port = 25;                       // Porta de conexão 
 
-$mail->From = 'contato@rmsites.com.br'; 			// e-mail From deve ser o mesmo de "username" (contadeEmail)
+$mail->From = 'melo@rmsites.com.br'; 			// e-mail From deve ser o mesmo de "username" (contadeEmail)
 
 $mail->FromName = strip_tags(utf8_decode('Rafael de Melo'));	// Nome que será exibido ao receber a mensagem. 
 
