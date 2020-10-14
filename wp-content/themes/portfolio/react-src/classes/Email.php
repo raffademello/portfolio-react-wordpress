@@ -8,19 +8,19 @@ $mail->SMTPDebug = 3;                 // Habilita modo debug na saída
 
 $mail->isSMTP();                        // Setar o uso do SMTP
 
-$mail->Host = 'smtp.gmail.com'; 	// Servidor smtp 
+$mail->Host = 'rmsites.com.br'; 	// Servidor smtp 
 
-//$mail->SMTPAuth = true;                 // Habilita a autenticação do form
+//$mail->SMTPAuth = true;                // Habilita a autenticação do form
 
-$mail->Username = 'raffa.demello@gmail.com';    // Conta de e-mail que realizará o envio
+$mail->Username = 'contato@rmsites.com.br';    // Conta de e-mail que realizará o envio
 
-$mail->Password = 'pirila[1985]';       // Senha da conta de e-mail
+$mail->Password = 'pearlj[90]';       // Senha da conta de e-mail
 
-$mail->SMTPSecure = 'tls';            // Habilitar uso do TLS (plesk 11.5 ou utilizando contas do Gmail)
+//$mail->SMTPSecure = 'tls';            // Habilitar uso do TLS (plesk 11.5 ou utilizando contas do Gmail)
 
-$mail->Port = 587;                       // Porta de conexão 
+$mail->Port = 25;                       // Porta de conexão 
 
-$mail->From = 'raffa.demello@gmail.com'; 			// e-mail From deve ser o mesmo de "username" (contadeEmail)
+$mail->From = 'contato@rmsites.com.br'; 			// e-mail From deve ser o mesmo de "username" (contadeEmail)
 
 $mail->FromName = strip_tags(utf8_decode('Rafael de Melo'));	// Nome que será exibido ao receber a mensagem. 
 
@@ -61,6 +61,7 @@ $mail->Body .= '</body></html>';
 //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 
+var_dump($mail->ErrorInfo);
 
 if(!$mail->send()) {
 
